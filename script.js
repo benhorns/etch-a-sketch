@@ -96,7 +96,7 @@ to populate container with .etch divs*/
 function resizeGrid(){
           /*Clears container entirely*/
           container.innerHTML = "" 
-          /* Get user input from*/
+          /* Get user input from input tag*/
           let inputVal = input.value;
           /* Determine the sizes of the new cells */
           let newWidth = (gridWidth / inputVal);
@@ -106,7 +106,7 @@ function resizeGrid(){
           console.log(newHeight);       
           console.log(newGrid);
           /* A for loop based on the squared value of the varibale defined
-          above. */
+          above that populates #container with .etch divs */
           for(i=0; i<newGrid; i++){
           const div = document.createElement('div');
           div.classList.add('etch');
@@ -121,6 +121,7 @@ resizeBtn.addEventListener('click', resizeGrid)
 
 resetBtn.addEventListener('click', resetGrid)
 
+/* the variable randomRGBCoor is assigned to the funciton below, which generates a random hexadecimal string */
  const randomRGBColor = function(){
   const options = '0123456789ABCDEF';
   let myReturn = "#";
@@ -130,6 +131,7 @@ resetBtn.addEventListener('click', resetGrid)
   return myReturn;
 };
 
+/*This pushes the randomly generated colors above into the paelltes.randomColors array.*/
 for(let i=0; i<palettes.grey.length; i++){
   palettes.randomColors.push(randomRGBColor() );
 }
